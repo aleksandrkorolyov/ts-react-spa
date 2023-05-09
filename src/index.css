@@ -16,3 +16,9 @@ code {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+.submit_button {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
