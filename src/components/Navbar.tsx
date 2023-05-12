@@ -21,7 +21,7 @@ export const Navbar: React.FC = () => (
                     <NavLink to='/tik-tok-page'> TikTok</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/gdp'> GDP integration</NavLink>
+                    <NavLink to='/gdp'> GPT integration</NavLink>
                 </li>
             </ul>
         </div>
