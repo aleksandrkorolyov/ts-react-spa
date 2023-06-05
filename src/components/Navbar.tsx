@@ -15,6 +15,9 @@ export const Navbar: React.FC = () => (
                     <NavLink to='/smart-form'> Smart form</NavLink>
                 </li>
                 <li>
+                    <NavLink to='/groupable-table'> Groupable table</NavLink>
+                </li>
+                <li>
                     <NavLink to='/dd-func'> Drag & Drop</NavLink>
                 </li>
                 <li>

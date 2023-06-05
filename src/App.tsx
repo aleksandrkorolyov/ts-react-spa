@@ -7,6 +7,7 @@ import SmartFormPage from './pages/SmartFormPage';
 import DragAndDropPage from './pages/DragAndDropPage';
 import TikTokPage from './pages/TikTokPage';
 import GdpIntegrationPage from './pages/GdpIntegrationPage';
+import GroupableTable from './pages/GroupableTable';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path='/' element={<HomePage />}/>
             <Route path='/smart-form' element={<SmartFormPage />}/>
+            <Route path='/groupable-table' element={<GroupableTable/>} />
             <Route path='/dd-func' element={<DragAndDropPage />}/>
             <Route path='/tik-tok-page' element={<TikTokPage />}/>
             <Route path='/gdp' element={<GdpIntegrationPage />}/>
