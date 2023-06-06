@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     GroupingState,
     useReactTable,
@@ -57,8 +57,9 @@ const GroupableTable: React.FC = () => {
         []
     )
 
-    const [data] = React.useState(() => makeData(100))
+    const [data, setData] = React.useState([])
 
+    useEffect( () => { makeData(10).then(users => { setData(users) }) } , [] )
     const [grouping, setGrouping] = React.useState<GroupingState>([])
 
     const table = useReactTable({

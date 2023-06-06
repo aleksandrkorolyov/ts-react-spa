@@ -10,19 +10,11 @@ export type Person = {
   subRows?: Person[]
 }
 
-const range = (len: number) => {
-  const arr = []
-  for (let i = 0; i < len; i++) {
-    arr.push(i)
-  }
-  return arr
-}
-
-const newPerson = (): Person => {
+const newPerson = (user:any): Person => {
   return {
-    firstName: faker.person.firstName(),
-    lastName: faker.person.lastName(),
-    age: faker.number.int({ max: 40}),
+    firstName: user.first_name,
+    lastName: user.last_name,
+    age: faker.number.int({ max: 40 }),
     visits: faker.number.int(1000),
     progress: faker.number.int(100),
     status: faker.helpers.shuffle<Person['status']>([
@@ -33,16 +25,15 @@ const newPerson = (): Person => {
   }
 }
 
-export function makeData(...lens: number[]) {
-  const makeDataLevel = (depth = 0): Person[] => {
-    const len = lens[depth]!
-    return range(len).map((d): Person => {
-      return {
-        ...newPerson(),
-        subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,
-      }
-    })
-  }
+export async function makeData(...lens: number[]) {
 
-  return makeDataLevel()
+  try {
+    const res = await fetch('https://random-data-api.com/api/v2/users?size=10').then(res => res.json());
+    const arr = res.map((user: any) => {
+      return {...newPerson(user) }
+    })  
+    return arr
+  } catch (error) {
+    console.log(error)
+  }
 }
