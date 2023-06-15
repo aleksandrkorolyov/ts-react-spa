@@ -6,7 +6,7 @@ import HomePage from './pages/HomePage';
 import SmartFormPage from './pages/SmartFormPage';
 import DragAndDropPage from './pages/DragAndDropPage';
 import TikTokPage from './pages/TikTokPage';
-import GdpIntegrationPage from './pages/GdpIntegrationPage';
+import GdpIntegrationPage from './pages/GPTIntegrationPage';
 import GroupableTable from './pages/GroupableTable';
 
 const App: React.FC = () => {
