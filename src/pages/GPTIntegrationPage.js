@@ -6,7 +6,7 @@ const GPTIntegrationPage = () => {
     const [req, setReq] = useState('');
     const [resp, setResp] = useState('');
 
-    const API_KEY = "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"
+    const API_KEY = "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"
 
     const API_BODY = {
         "model": "text-davinci-003",
