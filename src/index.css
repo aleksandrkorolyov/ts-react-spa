@@ -22,3 +22,35 @@ code {
   justify-content: center;
   padding-top: 1rem;
 }
+
+.table_body {
+  padding-top: 2rem;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+table {
+  padding-top: 5em;
+  border: 1px solid lightgray;
+}
+
+tbody {
+  border-bottom: 1px solid lightgray;
+}
+
+th {
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  padding: 2px 4px;
+}
+
+tfoot {
+  color: gray;
+}
+
+tfoot th {
+  font-weight: normal;
+}
