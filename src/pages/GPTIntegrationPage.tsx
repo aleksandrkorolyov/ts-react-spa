@@ -6,7 +6,7 @@ const GPTIntegrationPage = () => {
     const [req, setReq] = useState('');
     const [resp, setResp] = useState('');
 
-    const API_KEY = "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"
+    const API_KEY = "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"
 
     const API_BODY = {
         "model": "text-davinci-003",
@@ -54,11 +54,13 @@ const GPTIntegrationPage = () => {
         }}
     }, [req]);
 
-    const submitHandler = async (event) => {
+    const submitHandler = async (event: React.SyntheticEvent) => {
         event.preventDefault()
-        setReq(event.target.question.value);
-        console.log(req)
 
+        const form = event.target as HTMLFormElement;
+        const questionInput = form.elements.namedItem('question') as HTMLInputElement;
+
+        setReq(questionInput.value);
     }
 
     return (
