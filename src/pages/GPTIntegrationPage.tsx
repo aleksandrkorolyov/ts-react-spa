@@ -6,12 +6,16 @@ const GPTIntegrationPage = () => {
     const [req, setReq] = useState('');
     const [resp, setResp] = useState('');
 
-    const API_KEY = "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"
+    const API_KEY = "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"
 
-    const API_BODY = {
+    interface ApiBody {
+        [key: string]: string;
+    }
+
+    const API_BODY: ApiBody[] = {
         "model": "text-davinci-003",
         "prompt": req,
-        "temperature": 0,
+        "temperature": 0.7,
         "max_tokens": 100,
         "top_p": 1,
         "frequency_penalty": 0.0,
