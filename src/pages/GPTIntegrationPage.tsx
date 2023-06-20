@@ -12,7 +12,7 @@ const GPTIntegrationPage = () => {
         [key: string]: string;
     }
 
-    const API_BODY: ApiBody[] = {
+    const API_BODY = {
         "model": "text-davinci-003",
         "prompt": req,
         "temperature": 0.7,
