@@ -6,12 +6,16 @@ const GPTIntegrationPage = () => {
     const [req, setReq] = useState('');
     const [resp, setResp] = useState('');
 
-    const API_KEY = "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"
+    const API_KEY = "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"
 
-    const API_BODY = {
+    interface ApiBody {
+        [key: string]: string;
+    }
+
+    const API_BODY: ApiBody[] = {
         "model": "text-davinci-003",
         "prompt": req,
-        "temperature": 0,
+        "temperature": 0.7,
         "max_tokens": 100,
         "top_p": 1,
         "frequency_penalty": 0.0,
@@ -54,11 +58,13 @@ const GPTIntegrationPage = () => {
         }}
     }, [req]);
 
-    const submitHandler = async (event) => {
+    const submitHandler = async (event: React.SyntheticEvent) => {
         event.preventDefault()
-        setReq(event.target.question.value);
-        console.log(req)
 
+        const form = event.target as HTMLFormElement;
+        const questionInput = form.elements.namedItem('question') as HTMLInputElement;
+
+        setReq(questionInput.value);
     }
 
     return (
