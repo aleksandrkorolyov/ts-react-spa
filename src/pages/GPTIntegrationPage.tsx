@@ -6,13 +6,20 @@ const GPTIntegrationPage = () => {
     const [req, setReq] = useState('');
     const [resp, setResp] = useState('');
 
-    const API_KEY = "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"
+    const API_KEY = "github_doesn't_allow_to_keep_key_in_repo:("
 
-    interface ApiBody {
-        [key: string]: string;
-    }
+    interface APIBody {
+        model: string;
+        prompt: string;
+        temperature: number;
+        max_tokens: number;
+        top_p: number;
+        frequency_penalty: number;
+        presence_penalty: number;
+      }
 
-    const API_BODY = {
+
+    const API_BODY: APIBody = {
         "model": "text-davinci-003",
         "prompt": req,
         "temperature": 0.7,
